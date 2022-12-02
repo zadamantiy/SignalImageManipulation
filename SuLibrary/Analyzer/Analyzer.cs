@@ -218,7 +218,6 @@ namespace SuLibrary.Analyzer
             }
 
             return Math.Abs((a - b) / (max - min) * 100);
-            //return Math.Abs((a - b) / ((a + b) / 2)) * 100;
         }
 
         public static Characteristics GetAllCharacteristics(PointPairList ppl, int minI = 0, int maxI = int.MaxValue)
@@ -244,7 +243,6 @@ namespace SuLibrary.Analyzer
 
         public static PointPairList GetDistribution(PointPairList ppl, double fromY, double toY, int partAmount = 100)
         {
-            //ppl.Sort();
             var res = new PointPairList();
 
             var partSize = (toY - fromY) / partAmount;
@@ -362,11 +360,6 @@ namespace SuLibrary.Analyzer
         public static PointPairList GetSpectreV3(PointPairList ppl, bool norm = true)
         {
             var res = new PointPairList();
-
-            //var spectre = GetReverseComplexSpectre(GetComplexSpectre(ppl, norm));
-            //var df = ppl[1].X - ppl[0].X;
-            //for (var i = 0; i < spectre.Count; i++)
-            //    res.Add(i * df, spectre[i].Real);
 
             var spectre = GetComplexSpectre(ppl, norm);
             var df = GetDf(ppl);
