@@ -1173,20 +1173,6 @@ namespace SuLibrary.Misc
                 }
             }
 
-            //Rendering image
-            //var newData = new List<PointPairList>();
-            //for (var i = 0; i < res.GetLength(0); i++)
-            //{
-            //    var ppl = new PointPairList();
-            //    for (var j = 0; j < res.GetLength(1); j++)
-            //    {
-            //        ppl.Add(j, Math.Log(Math.Pow(res[i, j].Real * res[i, j].Real + res[i, j].Imaginary * res[i, j].Imaginary, 1.0 / 2) + 1));
-            //    }
-            //    newData.Add(ppl);
-            //}
-            //Data = newData;
-            //return;
-
             var image = Get2DSpectreReverse(res);
 
             var newData = new List<PointPairList>();
@@ -1255,8 +1241,6 @@ namespace SuLibrary.Misc
             }
 
             var kernelSpectre = Analyzer.Analyzer.GetComplexSpectre(kernel, false);
-
-                //var potter = GraphManipulator.GetLPPotter(0.1, 64, 1);
             
             Parallel.For(0, Data.Count, i =>
             {
@@ -1406,7 +1390,6 @@ namespace SuLibrary.Misc
 
             var newData = new List<PointPairList>();
 
-            //Parallel.For(0, height, i =>
             for (var i = 0; i < height; i++)
             {
                 var line = new PointPairList();
@@ -1455,7 +1438,6 @@ namespace SuLibrary.Misc
 
             var newData = new List<PointPairList>();
 
-            //Parallel.For(0, height, i =>
             for (var i = 0; i < height; i++)
             {
                 var line = new PointPairList();
