@@ -20,7 +20,7 @@ namespace SuLibrary.Graph
             return ppl;
         }
 
-        //TODO: speed up
+        //TODO: speed up?
         public static PointPairList MergeGraphs(List<CurveItem> lci)
         {
             var ppl = new PointPairList();
@@ -52,7 +52,6 @@ namespace SuLibrary.Graph
 
             for (var i = 1; i < ppl.Count; i++)
             {
-                // ReSharper disable once CompareOfFloatsByEqualityOperator
                 if (ppl[i].X != ppl[i - 1].X) continue;
 
                 ppl[i - 1].Y += ppl[i].Y;
@@ -83,12 +82,6 @@ namespace SuLibrary.Graph
             return y;
         }
 
-        /// <summary>
-        /// Операция свёртки
-        /// </summary>
-        /// <param name="c1">Кривая 1</param>
-        /// <param name="c2">Кривая 2</param>
-        /// <returns>Набор точек, результат операции свёртки</returns>
         public static PointPairList GetСonvolution(CurveItem c1, CurveItem c2)
         {
             var res = new PointPairList();
@@ -208,7 +201,6 @@ namespace SuLibrary.Graph
 
         public static void AntiShift(CurveItem ci)
         {
-            //TODO: TO FUNC
             var ppl = new PointPairList();
             for (var i = 0; i < ci.Points.Count; i++)
             {
