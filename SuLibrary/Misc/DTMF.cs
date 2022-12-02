@@ -118,7 +118,6 @@ namespace SuLibrary.Misc
 
                 var adjustedMeanPower = adjustmentFactor * powers.Average(x => x.Power);
                 var highestPowers = powers.Take(2).OrderBy(x => x.Frequency).ToList();
-                //var adjustedMeanPower = adjustmentFactor * powers.OrderBy(x => x.Power).Take(6).Average(x => x.Power);
                 var c = highestPowers[0].Frequency < 1000 && highestPowers[1].Frequency > 1000 &&
                             highestPowers.All(x => x.Power > adjustedMeanPower)
                     ? FreqToChar[highestPowers[0].Frequency][highestPowers[1].Frequency]
